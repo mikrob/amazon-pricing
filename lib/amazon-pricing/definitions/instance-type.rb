@@ -395,7 +395,24 @@ module AwsPricing
     # Due to fact AWS pricing API only reports these for EC2, we will fetch from EC2 and keep around for lookup
     # e.g. EC2 = http://aws-assets-pricing-prod.s3.amazonaws.com/pricing/ec2/linux-od.js
     # e.g. RDS = http://aws-assets-pricing-prod.s3.amazonaws.com/pricing/rds/mysql/pricing-standard-deployments.js
-    @@Compute_Units_Lookup = {}
+    @@Compute_Units_Lookup = {
+      'db.t1.micro' => 0,
+      'db.m1.small' =>1, 'db.m1.medium' => 2, 'db.m1.large' =>4, 'db.m1.xlarge' => 8, 'db.m2.xlarge' => 6.5,
+      'db.m2.2xlarge' => 13, 'db.m2.4xlarge' => 26,
+      'db.cr1.8xlarge' => 88,
+      'db.m3.medium' => 3, 'db.m3.large' => 6.5, 'db.m3.xlarge' => 13, 'db.m3.2xlarge' => 26,
+      'db.r3.large' => 6.5, 'db.r3.xlarge' => 13, 'db.r3.2xlarge' => 26, 'db.r3.4xlarge' => 52, 'db.r3.8xlarge' => 104,
+      'db.t2.micro' =>  0, 'db.t2.small' => 0, 'db.t2.medium' => 0, 'db.t2.large' => 0, 'db.t2.xlarge' => 0, 'db.t2.2xlarge' => 0,
+      'db.m4.large' => 6.5, 'db.m4.xlarge' => 13, 'db.m4.2xlarge' => 26, 'db.m4.4xlarge' => 53.5, 'db.m4.10xlarge' => 124.5,
+      'db.m4.16xlarge' => 188,
+      'db.r4.large' => 7, 'db.r4.xlarge' => 13.5, 'db.r4.2xlarge' => 27, 'db.r4.4xlarge' => 53, 'db.r4.8xlarge' => 99,
+      'db.r4.16xlarge' => 195,
+      'db.x1e.xlarge' =>12,  'db.x1e.2xlarge' => 23, 'db.x1e.4xlarge' => 47, 'db.x1e.8xlarge' => 91, 'db.x1e.16xlarge' =>179,
+      'db.x1e.32xlarge' =>340,
+      'db.x1.16xlarge' => 174.5, 'db.x1.32xlarge' => 349,
+      'db.m5.large' => 10, 'db.m5.xlarge' => 15, 'db.m5.2xlarge' => 31, 'db.m5.4xlarge' =>61, 'db.m5.12xlarge' => 173,
+      'db.m5.24xlarge' => 345
+    }
 
     private
 
